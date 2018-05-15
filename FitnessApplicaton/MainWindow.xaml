@@ -8,8 +8,39 @@
         mc:Ignorable="d"
                       
         Height="481" Width="800">
-    <Grid>
+    <controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
         
-    </Grid>
+    </controls:MetroWindow.Resources>
+    
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <Button Content="settings" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                               Height="20"
+                               Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cupcake}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="deploy cupcakes" />
+                </StackPanel>
+            </Button>
+          
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+
+
+    <Button Style="{DynamicResource MetroCircleButtonStyle}" Width="50" Height="50" >
+       
+    </Button>
 </controls:MetroWindow>
 
